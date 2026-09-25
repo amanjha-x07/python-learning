@@ -1,4 +1,7 @@
-def greet():
-    print("Hello! Welcome to Python.")
+def greet(name):
+    return "Hello, " + name
 
-greet()
+
+message = greet("Python Learner")
+
+print(message)
