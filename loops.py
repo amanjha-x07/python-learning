@@ -1,2 +1,9 @@
-for i in range(1, 6):
-    print(i)
+numbers = [1, 2, 3, 4, 5]
+
+total = 0
+
+for number in numbers:
+    total += number
+
+print("Numbers:", numbers)
+print("Total =", total)
