@@ -1,7 +1,24 @@
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+def calculator():
+    num1 = float(input("Enter first number: "))
+    operator = input("Enter operator (+, -, *, /): ")
+    num2 = float(input("Enter second number: "))
 
-print("Addition =", num1 + num2)
-print("Subtraction =", num1 - num2)
-print("Multiplication =", num1 * num2)
-print("Division =", num1 / num2)
+    if operator == "+":
+        print("Result =", num1 + num2)
+
+    elif operator == "-":
+        print("Result =", num1 - num2)
+
+    elif operator == "*":
+        print("Result =", num1 * num2)
+
+    elif operator == "/":
+        if num2 != 0:
+            print("Result =", num1 / num2)
+        else:
+            print("Cannot divide by zero.")
+
+    else:
+        print("Invalid operator.")
+
+calculator()
