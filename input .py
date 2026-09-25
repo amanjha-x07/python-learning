@@ -1,3 +1,6 @@
-name = input("Enter your name: ")
+name = input("Enter your name: ").strip()
 
-print("Hello", name)
+if name:
+    print("Hello,", name)
+else:
+    print("Name cannot be empty.")
