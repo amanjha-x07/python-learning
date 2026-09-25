@@ -1,6 +1,8 @@
-x = 10
-y = 20
+length = 10
+width = 5
 
-sum = x + y
+area = length * width
+perimeter = 2 * (length + width)
 
-print("Sum =", sum)
+print("Area =", area)
+print("Perimeter =", perimeter)
