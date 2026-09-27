@@ -11,14 +11,23 @@ while True:
 
     if choice == "1":
         name = input("Enter expense name: ")
-        amount = float(input("Enter expense amount: "))
 
-        expenses.append({
-            "name": name,
-            "amount": amount
-        })
+        try:
+            amount = float(input("Enter expense amount: "))
 
-        print("Expense added.")
+            if amount < 0:
+                print("Amount cannot be negative.")
+                continue
+
+            expenses.append({
+                "name": name,
+                "amount": amount
+            })
+
+            print("Expense added.")
+
+        except ValueError:
+            print("Please enter a valid amount.")
 
     elif choice == "2":
         if not expenses:
@@ -38,13 +47,17 @@ while True:
             for i, expense in enumerate(expenses, start=1):
                 print(i, "-", expense["name"], ":", expense["amount"])
 
-            number = int(input("Enter expense number to delete: "))
+            try:
+                number = int(input("Enter expense number to delete: "))
 
-            if 1 <= number <= len(expenses):
-                expenses.pop(number - 1)
-                print("Expense deleted.")
-            else:
-                print("Invalid expense number.")
+                if 1 <= number <= len(expenses):
+                    expenses.pop(number - 1)
+                    print("Expense deleted.")
+                else:
+                    print("Invalid expense number.")
+
+            except ValueError:
+                print("Please enter a valid number.")
 
     elif choice == "5":
         print("Goodbye!")
