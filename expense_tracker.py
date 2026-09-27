@@ -9,15 +9,25 @@ while True:
     choice = input("Enter your choice: ")
 
     if choice == "1":
-        expense = float(input("Enter expense amount: "))
-        expenses.append(expense)
+        name = input("Enter expense name: ")
+        amount = float(input("Enter expense amount: "))
+
+        expenses.append({
+            "name": name,
+            "amount": amount
+        })
+
         print("Expense added.")
 
     elif choice == "2":
-        print("Expenses:", expenses)
+        if not expenses:
+            print("No expenses yet.")
+        else:
+            for expense in expenses:
+                print(expense["name"], "-", expense["amount"])
 
     elif choice == "3":
-        total = sum(expenses)
+        total = sum(expense["amount"] for expense in expenses)
         print("Total expense =", total)
 
     elif choice == "4":
